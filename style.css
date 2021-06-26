@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{background-color: black;}
+body{
+    background-color: #fff8dc; font-family: sans-serif;
+    width: 1000px; height: 1200px;
+    margin: auto; margin-top: 1em;
+}
+.contenedor{
+    width: 100%; height: 100%;
+    background-color: rgba(109, 107, 141, 0.3);
+    display: grid; 
+    grid-gap: 15px; 
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 75px 350px 1fr;
+    grid-template-areas: "header  header header header"
+                         "nav     nav    nav    nav"
+                         "section cuerpo cuerpo side"
+                         "footer  footer footer footer";
+}
+.contenedor header{width: 100%; height: 100%;background-color: orange;grid-area: header;}
+header .cabecera{ padding-top: 5px;display: grid;place-items: center;}
+header .logo{width: 50%; height: 100%; margin-top: 1em;
+    float: inline-start; box-sizing: border-box;
+    display: grid;
+    place-items: center;
+}
+
+header .logo img{ width: 75%;
+    border-radius: 50%;float: inline-start;box-sizing: border-box;
+}
+
+header .box{width: 75%;  float: right; padding: 10px;
+    text-align: center;
+}
+header .box h1{ font-size: 40px;}
+header .box p{font-size: 16px; font-weight: bold; text-align: center;}
+
+.contenedor nav{width: 100%;
+    background-color: rgb(59, 172, 134);
+    grid-column-start: nav;
+    grid-column-end: nav;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.contenedor nav ul li{
+    display: inline;   
+}
+.contenedor nav ul li a{
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 15px; margin: auto;
+    font-weight: bold; 
+    letter-spacing: 2px;
+    transition: 0.7s;
+}
+.contenedor nav ul li a:hover{color: rgb(10, 10, 10); font-size: 16px;}
+
+
+.contenedor  section{float: left;
+    width: 100%; padding: 10px;
+    grid-area: section;
+    
+}
+.contenedor  section img{
+    width: 100%; height: 100%; border: 1px solid black;
+}
+.contenedor  article{  position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 100%; grid-area: cuerpo;
+  
+}
+.contenedor  article h3{ width: 100%; font-size: 30px; color: yellow;
+    position: absolute;background-color: #222017;
+    
+}
+.contenedor  article img{width: 100%; height: 100%; border: 1px solid black;
+
+}
+.contenedor  aside{
+    width: 100%; padding: 10px;
+    grid-area: side;
+}
+.contenedor aside img{ width: 100%; height: 100%;
+    border: 1px solid black;
+}
+.contenedor footer{ width: 100%; 
+    background-color: rgb(36, 80, 80); text-align: center; height: 100%;
+    grid-area: footer;
+}
+.contenedor footer h4{font-size: 20px; padding: 15px;
+
+}
+.contenedor footer .redes{
+    margin: auto; 
+    display: inline-block;
+    width: 60%; 
+
+}
+.contenedor footer .redes h5{
+    padding: 1em;
+    font-size: 15px;
+    font-weight: bold;
+}
+.contenedor footer .redes a{width: 50%;
+    padding: 5px;
+}
+.contenedor footer .redes a img{border-radius: 50%;
+    padding: 5px;
+  width: 10%; transition: 0.8s;
+}
+.contenedor footer .redes a img:hover{
+    background-color: yellow; 
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .contenedor{
+    
+        grid-template-columns: 384px 1fr ;
+        grid-template-rows: 1fr 75px  55% 40% 1fr;
+        grid-template-areas: "header header"
+                             "nav    nav"
+                             "cuerpo cuerpo" 
+                             "section side"                          
+                             "footer footer";
+                            }
+
+
+}
+@media only screen and (max-width: 580px) {
+    .contenedor{
+    
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 75px  75% 50% 50% 1fr;
+    grid-template-areas: "header"
+                         "nav"
+                         "section" 
+                         "cuerpo" 
+                         "side"
+                         "footer";
+                        }
+    
+}
